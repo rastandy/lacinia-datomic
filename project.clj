@@ -7,6 +7,7 @@
                  [ring/ring-jetty-adapter "1.6.2"]
                  [ring/ring-json "0.4.0"]
                  [compojure "1.6.0"]
-                 [com.walmartlabs/lacinia "0.21.0"]]
+                 [com.walmartlabs/lacinia "0.21.0"]
+                 [io.rkn/conformity "0.5.1"]]
   :plugins  [[lein-ring "0.12.1"]]
   :ring {:handler lacinia-example.core/app})
