@@ -21,5 +21,5 @@
       wrap-json-response))
 
 (defn start-server []
-  (jetty/run-jetty #'app {:port 3000
+  (jetty/run-jetty #'app {:port 3001
                           :join? false}))
