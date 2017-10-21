@@ -4,7 +4,8 @@
             [ring.util.request :refer [body-string]]
             [compojure.core :refer [POST defroutes]]
             [com.walmartlabs.lacinia :as lacinia]
-            [lacinia-example.schema :as schema]))
+            [lacinia-example.schema :as schema]
+            [ring.adapter.jetty :as jetty]))
 
 (defn handler [request]
   (response
@@ -18,3 +19,7 @@
 (def app
   (-> my-routes
       wrap-json-response))
+
+(defn start-server []
+  (jetty/run-jetty #'app {:port 3000
+                          :join? false}))
