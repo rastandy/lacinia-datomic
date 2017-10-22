@@ -55,8 +55,7 @@
 (defn- find-by-id
   [data target-id]
   (->> data
-       (map :id)
-       (filter #{target-id})
+       (filter #(= (:id %) target-id))
        first))
 
 (defn- get-humans
