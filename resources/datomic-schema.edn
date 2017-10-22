@@ -11,6 +11,10 @@
            :db/valueType :db.type/ref
            :db/cardinality :db.cardinality/many
            :db/index true}
+          {:db/ident :character/type
+           :db/valueType :db.type/string
+           :db/cardinality :db.cardinality/one
+           :db/index true}
           {:db/ident :droid/primary-function
            :db/valueType :db.type/string
            :db/cardinality :db.cardinality/many
