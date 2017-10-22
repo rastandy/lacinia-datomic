@@ -1,0 +1,34 @@
+{:lacinia-example/star-wars-schema
+ {:txes [[{:db/ident :character/name
+           :db/valueType :db.type/string
+           :db/cardinality :db.cardinality/one
+           :db/index false}
+          {:db/ident :character/appears-in
+           :db/valueType :db.type/ref
+           :db/cardinality :db.cardinality/many
+           :db/index true}
+          {:db/ident :character/friends
+           :db/valueType :db.type/ref
+           :db/cardinality :db.cardinality/many
+           :db/index true}
+          {:db/ident :droid/primary-function
+           :db/valueType :db.type/string
+           :db/cardinality :db.cardinality/many
+           :db/index true}
+          {:db/ident :human/home-planet
+           :db/valueType :db.type/string
+           :db/cardinality :db.cardinality/one
+           :db/index true}
+          {:db/ident :human/force-side
+           :db/valueType :db.type/string
+           :db/cardinality :db.cardinality/one
+           :db/index true}
+          {:db/ident :episode/title
+           :db/valueType :db.type/string
+           :db/cardinality :db.cardinality/one
+           :db/index true}
+          {:db/ident :episode/hero
+           :db/valueType :db.type/ref
+           :db/cardinality :db.cardinality/one
+           :db/index true}]]}}
+
