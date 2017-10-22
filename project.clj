@@ -8,6 +8,7 @@
                  [ring/ring-json "0.4.0"]
                  [compojure "1.6.0"]
                  [com.walmartlabs/lacinia "0.21.0"]
-                 [io.rkn/conformity "0.5.1"]]
+                 [io.rkn/conformity "0.5.1" :exclusions [com.datomic/datomic-free]]
+                 [com.datomic/datomic-free "0.9.5561.62"]]
   :plugins  [[lein-ring "0.12.1"]]
   :ring {:handler lacinia-example.core/app})
