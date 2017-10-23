@@ -3,17 +3,17 @@
             [clojure.edn :as edn]
             [com.walmartlabs.lacinia.util :refer [attach-resolvers]]
             [com.walmartlabs.lacinia.schema :as schema]
-            [lacinia-example.db :as db]))
+            [lacinia-example.resolvers :as r]))
 
 (def star-wars-schema
   (-> (io/resource "schema.edn")
       slurp
       edn/read-string
-      (attach-resolvers {:resolve-hero           db/resolve-hero
-                         :resolve-human          db/resolve-human
-                         :resolve-humans         db/resolve-humans
-                         :resolve-droid          db/resolve-droid
-                         :resolve-droids         db/resolve-droids
-                         :resolve-friends        db/resolve-friends
-                         :resolve-mutate-human   db/resolve-mutate-human})
+      (attach-resolvers {:resolve-hero           r/resolve-hero
+                         :resolve-human          r/resolve-human
+                         :resolve-humans         r/resolve-humans
+                         :resolve-droid          r/resolve-droid
+                         :resolve-droids         r/resolve-droids
+                         :resolve-friends        r/resolve-friends
+                         :resolve-mutate-human   r/resolve-mutate-human})
       schema/compile))
