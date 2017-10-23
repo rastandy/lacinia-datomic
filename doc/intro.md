@@ -16,7 +16,7 @@ for implementing validation and error reporting is clojure.spec and
 maybe [phraser](https://github.com/alexanderkiel/phrase) for producing
 nice error messages for the end user.
 
-## Lacinia resolvers wrt Datmoic queries
+## Lacinia resolvers wrt Datomic queries
 
 Each Lacinia resolver makes a query to the Datomic db. This is an ok
 solution when the Lacinia server is also a Datomic peer. Not that good
