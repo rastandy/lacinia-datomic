@@ -1,4 +1,4 @@
-# Design choices
+# Considerations
 
 ## Datomic memory store
 
