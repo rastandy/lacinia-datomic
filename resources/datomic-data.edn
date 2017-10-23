@@ -33,6 +33,7 @@
            :character/name        "Han Solo"
            :character/friends     ["1000", "1003", "2001"]
            :character/appears-in  #{"1" "2" "3"}
+           :character/type        "human"
            :human/force-side      "3001"}
           {:db/id                 "1004"
            :character/name        "Wilhuff Tarkin"
