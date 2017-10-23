@@ -43,6 +43,8 @@
 (defn resolve-droid
   [_ {:keys [id] :as args} _]
   (let [id (bigint id)
+        ;; Pull all attributes of a droid for simplicity.
+        ;; Datomic would probably fetch them anyway because of datoms locality.
         character (d/pull (d/db db/conn)
                           '[* {:character/appears-in [:episode/title]}] id)]
     (if (= (:character/type character) "droid")
@@ -52,6 +54,8 @@
 (defn resolve-human
   [x {:keys [id] :as args} _]
   (let [id (bigint id)
+        ;; Pull all attributes of a human for simplicity.
+        ;; Datomic would probably fetch them anyway because of datoms locality.
         character (d/pull (d/db db/conn)
                           '[* {:character/appears-in [:episode/title]}] id)]
     (if (= (:character/type character) "human")
@@ -89,5 +93,9 @@
 
 (defn resolve-mutate-human
   [_ {:keys [id name] :as args} _]
+  ;; FIXME
+  ;; Don't let clients choose the entity id.
+  ;; It's better fo find an attribute or a combination of attributes
+  ;; that must be unique to identify humans.
   (d/transact db/conn [{:character/name name, :character/type "human"}])
   (db->graphql (get-humans)))
