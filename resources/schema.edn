@@ -30,7 +30,8 @@
  :queries    {
               :hero
               {:type    (non-null :character)
-               :args    {:episode {:type :episode}}
+               :args    {:episode {:type :episode
+                                   :default-value "JEDI"}}
                :resolve :resolve-hero}
               :human
               {:type    (non-null :human)
