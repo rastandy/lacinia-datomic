@@ -95,7 +95,7 @@
   [_ {:keys [id name] :as args} _]
   ;; FIXME
   ;; Don't let clients choose the entity id.
-  ;; It's better fo find an attribute or a combination of attributes
+  ;; It's better to find an attribute or a combination of attributes
   ;; that must be unique to identify humans.
   (d/transact db/conn [{:character/name name, :character/type "human"}])
   (db->graphql (get-humans)))
